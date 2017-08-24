@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <projectSourceUrl>https://github.com/limebox/sdf</projectSourceUrl>
     <docsUrl>https://raw.githubusercontent.com/limebox/sdf/master/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/limebox/sdf/issues</bugTrackerUrl>
-    <tags>NetSuite, Oracle, SDF, CLI, SuiteCloud Development Framework</tags>
+    <tags>NetSuite Oracle SDF CLI SuiteCloud Development Framework</tags>
     <summary>This is an installer app for the NetSuite SDF CLI tool, I will keep this as up-to-date as possible (specifically during major releases from NetSuite. Dependencies are [JDK8](https://chocolatey.org/packages/jdk8) and [Maven](https://chocolatey.org/packages/maven) (they will autoinstall).</summary>
     <description>This is my first chocolatey package, so please forgive the crudity (I've never written in PowerShell).
 
