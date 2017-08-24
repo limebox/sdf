@@ -1,14 +1,9 @@
-﻿$root = $(Split-Path -Parent $MyInvocation.MyCommand.Definition)
-$bin = Join-Path $root "bin"
-$installParent = $env:USERPROFILE
+$bin = Join-Path $(Split-Path -Parent $MyInvocation.MyCommand.Definition) "bin"
+$installFolder = $env:USERPROFILE
 
-$testPath = "$installParent\sdfcli"
+New-Item "$installFolder\sdfcli" -type directory
 
-If(!(test-path $testPath)) {
-    New-Item "$installParent\sdfcli" -type directory
-}
-
-$appDir = Join-Path $installParent "sdfcli"
+$appDir = Join-Path $installFolder "sdfcli"
 
 Copy-Item "$bin\*" $appDir
 
