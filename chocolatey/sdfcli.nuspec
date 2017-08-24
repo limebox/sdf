@@ -27,7 +27,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <title>NetSuite SDF cli Tool</title>
     <authors>TJ Tyrrell, Limebox Corporation, Oracle NetSuite</authors>
     <projectUrl>https://limebox.co</projectUrl>
-    <iconUrl>https://github.com/limebox/sdf/raw/master/bin/sdf-cli.jpg</iconUrl>
+    <iconUrl>https://github.com/limebox/sdf/raw/master/bin/sdf-cli.png</iconUrl>
     <copyright>2017 Limebox Corporation (Package), 2017 Oracle-NetSuite (SDF Software)</copyright>
     <licenseUrl>https://github.com/limebox/sdf/raw/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
