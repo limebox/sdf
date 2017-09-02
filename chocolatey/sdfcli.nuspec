@@ -20,25 +20,22 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
   <metadata>
     <id>sdfcli</id>
     <version>17.1.2</version>
-    <packageSourceUrl>https://github.com/limebox/sdf/raw/master/chocolatey/sdfcli.17.1.2.nupkg</packageSourceUrl>
+    <packageSourceUrl>https://github.com/limebox/sdf/raw/master/bin/chocolatey/sdfcli.17.1.2.nupkg</packageSourceUrl>
 	<owners>TJ Tyrrell</owners>
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <title>NetSuite SDF cli Tool</title>
-    <authors>TJ Tyrrell, Limebox Corporation, Oracle NetSuite</authors>
-    <projectUrl>https://limebox.co</projectUrl>
+    <authors>Oracle NetSuite</authors>
+    <projectUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=chapter_4779302061.html</projectUrl>
     <iconUrl>https://github.com/limebox/sdf/raw/master/bin/sdf-cli.png</iconUrl>
-    <copyright>2017 Limebox Corporation (Package), 2017 Oracle-NetSuite (SDF Software)</copyright>
+    <copyright>2017 Oracle-NetSuite</copyright>
     <licenseUrl>https://github.com/limebox/sdf/raw/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/limebox/sdf</projectSourceUrl>
-    <docsUrl>https://raw.githubusercontent.com/limebox/sdf/master/README.md</docsUrl>
-    <bugTrackerUrl>https://github.com/limebox/sdf/issues</bugTrackerUrl>
+    <projectSourceUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html</projectSourceUrl>
+    <docsUrl>https://system.eu1.netsuite.com/app/help/helpcenter.nl?fid=book_4702638251.html</docsUrl>
     <tags>NetSuite Oracle SDF CLI SuiteCloud Development Framework</tags>
     <summary>This is an installer app for the NetSuite SDF CLI tool, I will keep this as up-to-date as possible (specifically during major releases from NetSuite. Dependencies are [JDK8](https://chocolatey.org/packages/jdk8) and [Maven](https://chocolatey.org/packages/maven) (they will autoinstall).</summary>
-    <description>This is my first chocolatey package, so please forgive the crudity (I've never written in PowerShell).
-
-    This is merely a script that follows the installation instructions from the [NetSuite Help Center](https://system.eu1.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html) (requires login). The installation directory is: C:\Users\YOURUSER\sdfcli and is only available to the user installing the product.
+    <description>This is merely a script that follows the installation instructions from the [NetSuite Help Center](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html) (requires login). The installation directory is: C:\Users\YOURUSER\sdfcli and is only available to the user installing the product.
 
     I do not own the rights to SDF, those rights are included in the attached license.
     </description>
