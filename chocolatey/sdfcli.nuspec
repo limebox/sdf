@@ -19,8 +19,8 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sdfcli</id>
-    <version>17.1.2</version>
-    <packageSourceUrl>https://github.com/limebox/sdf/raw/master/bin/chocolatey/sdfcli.17.1.2.nupkg</packageSourceUrl>
+    <version>17.2.0</version>
+    <packageSourceUrl>https://github.com/limebox/sdf/raw/master/bin/chocolatey/sdfcli.17.2.0.nupkg</packageSourceUrl>
 	<owners>TJ Tyrrell</owners>
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
@@ -39,7 +39,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
     I do not own the rights to SDF, those rights are included in the attached license.
     </description>
-    <releaseNotes>Version 17.1.2 - Initial release for 17.1</releaseNotes>
+    <releaseNotes>Version 17.2.0 - Initial release for 17.2</releaseNotes>
     <!-- =============================== -->      
 
     <dependencies>
