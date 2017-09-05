@@ -39,7 +39,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
     I do not own the rights to SDF, those rights are included in the attached license.
     </description>
-    <releaseNotes>Version 17.2.0 - Initial release for 17.2</releaseNotes>
+    <releaseNotes>Version 17.2.0 - Release for 17.2</releaseNotes>
     <!-- =============================== -->      
 
     <dependencies>
