@@ -1,2 +1,2 @@
 #!/bin/bash
-mvn -f /webdev/sdf/cli/pom.xml exec:java -Dexec.args="$*"
+mvn -f /usr/local/lib/sdfcli/pom.xml exec:java -Dexec.args="$*"
