@@ -4,6 +4,12 @@ CLS
 ECHO This script creates a new SuiteCloud project in the current folder.
 ECHO Make sure that you have read/write access to the current folder.
 ECHO.
+ECHO DISCLAIMER: The contents of the SDF CLI supplemental packages are
+ECHO provided as-is to help you install SDF CLI and set up your SuiteCloud
+ECHO projects.  The packages are only updated when a new version of SDF
+ECHO CLI is released.  The files are not officially supported NetSuite
+ECHO products.  
+ECHO.
 ECHO Select Project Type
 ECHO ======================
 ECHO 1. Account customization project
@@ -32,6 +38,7 @@ IF %ProjectType%==2 MKDIR %PublisherID%.%ProjectID%
 IF %ProjectType%==2 CD %PublisherID%.%ProjectID%
 MKDIR Objects
 MKDIR FileCabinet
+IF %ProjectType%==1 MKDIR AccountConfiguration
 IF %ProjectType%==1 MKDIR FileCabinet\SuiteScripts
 IF %ProjectType%==1 MKDIR FileCabinet\SuiteScripts\.attributes
 IF %ProjectType%==2 MKDIR FileCabinet\SuiteApps
@@ -41,7 +48,10 @@ IF %ProjectType%==2 MKDIR FileCabinet\SuiteApps\%PublisherID%.%ProjectID%\.attri
 @ECHO email= >> .sdf
 @ECHO role=3 >> .sdf
 @ECHO url= >> .sdf
-@ECHO ^<deploy^ > deploy.xml
+@ECHO ^<deploy^> > deploy.xml
+IF %ProjectType%==1 @ECHO     ^<configuration^> >> deploy.xml
+IF %ProjectType%==1 @ECHO         ^<path^>~/AccountConfiguration/*^</path^> >> deploy.xml
+IF %ProjectType%==1 @ECHO     ^</configuration^> >> deploy.xml
 @ECHO     ^<files^> >> deploy.xml
 IF %ProjectType%==1 @ECHO         ^<path^>~/FileCabinet/SuiteScripts/*^</path^> >> deploy.xml
 IF %ProjectType%==2 @ECHO         ^<path^>~/FileCabinet/SuiteApps/%PublisherID%.%ProjectID%/*^</path^> >> deploy.xml

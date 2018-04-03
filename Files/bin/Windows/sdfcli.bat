@@ -1,2 +1,2 @@
 @ECHO off
-mvn -f "[APP_PATH]\pom.xml" exec:java -Dexec.args="%*"
+mvn -f c:\sdf\cli\pom.xml exec:java -Dexec.args="%*"
