@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.netsuite</groupId>
     <artifactId>sdf-cli</artifactId>
-    <version>2017.1.2</version>
+    <version>2017.2.1</version>
     <name>SDF CLI</name>
     <build>
         <plugins>
@@ -13,7 +13,7 @@
                 <configuration>
                     <mainClass>com.netsuite.tools.SDF</mainClass>
                     <additionalClasspathElements>
-                        <additionalClasspathElement>com.netsuite.ide.core_2017.1.2.jar</additionalClasspathElement>
+                        <additionalClasspathElement>com.netsuite.ide.core_2017.2.1.jar</additionalClasspathElement>
                     </additionalClasspathElements>
                 </configuration>
             </plugin>
