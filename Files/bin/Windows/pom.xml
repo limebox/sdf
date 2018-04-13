@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.netsuite</groupId>
-    <artifactId>sdf-cli</artifactId>
-    <version>2017.2.1</version>
-    <name>SDF CLI</name>
+    <artifactId>sdf-sdk</artifactId>
+    <version>2018.1.0</version>
+    <name>SDF SDK</name>
     <build>
         <plugins>
             <plugin>
@@ -13,7 +13,7 @@
                 <configuration>
                     <mainClass>com.netsuite.tools.SDF</mainClass>
                     <additionalClasspathElements>
-                        <additionalClasspathElement>com.netsuite.ide.core_2017.2.1.jar</additionalClasspathElement>
+                    <additionalClasspathElement>com.netsuite.ide.core_2018.1.0.jar</additionalClasspathElement>
                     </additionalClasspathElements>
                 </configuration>
             </plugin>
