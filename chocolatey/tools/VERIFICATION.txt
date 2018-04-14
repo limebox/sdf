@@ -3,8 +3,8 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
  
 The file for the SDF CLI can be found here:
-https://system.netsuite.com/download/ide/update_17_2/plugins/com.netsuite.ide.core_2017.2.0.jar
+https://system.netsuite.com/download/ide/update_18_1/plugins/com.netsuite.ide.core_2018.1.1.jar
 
 Given the special case of how this application needs to be executed (using Apache Maven and JDK), the unreliability of the available file on their server, and when/if they lock it behind a password, I have opted to including the .jar file in this package.
 
-The MD5 of the downloaded file as of 9/2/2017 is: b681383cf09a924627f7f52429112d9f
+The MD5 of the downloaded file as of 4/14/2018 is: b62b7a0dce4acd81e129c6f1b83ca381

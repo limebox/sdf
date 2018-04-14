@@ -4,7 +4,7 @@ LICENSE
 
 SUITECLOUD SDFCLI INSTALLER AGREEMENT
 
-Copyright (c) 2017 LIMEBOX CORPORATION
+Copyright (c) 2018 LIMEBOX CORPORATION
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -43,7 +43,7 @@ INTO AGREEMENT ON BEHALF OF YOU OR YOUR COMPANY (OR OTHER ENTITY). IF YOU DO NOT
   HEREIN, DO NOT INSTALL, COPY OR OTHERWISE USE THE SUITECLOUD IDE IN ANY
   MANNER.
 
-© NetSuite Inc. 2012 - 2017
+© NetSuite Inc. 2012 - 2018
 
 In this SuiteCloud IDE License Agreement ("Agreement"), "SuiteCloud IDE" means
 the software libraries, documentation, sample files, and other related items

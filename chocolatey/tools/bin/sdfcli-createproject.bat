@@ -1,13 +1,13 @@
 @ECHO off
-:PROJECTMENU
 CLS
-ECHO This script creates a new SuiteCloud project in the current folder.
+:PROJECTMENU
+ECHO This script creates a new SDF project in the current folder.
 ECHO Make sure that you have read/write access to the current folder.
 ECHO.
 ECHO DISCLAIMER: The contents of the SDF CLI supplemental packages are
-ECHO provided as-is to help you install SDF CLI and set up your SuiteCloud
+ECHO provided as-is to help you install SDF SDK and set up your SDF
 ECHO projects.  The packages are only updated when a new version of SDF
-ECHO CLI is released.  The files are not officially supported NetSuite
+ECHO SDK is released.  The files are not officially supported Oracle
 ECHO products.  
 ECHO.
 ECHO Select Project Type
@@ -15,11 +15,24 @@ ECHO ======================
 ECHO 1. Account customization project
 ECHO 2. SuiteApp project
 ECHO.
-SET /P ProjectType=Type 1 or 2 then press ENTER: 
+ECHO X. Exit
+ECHO.
+SET ProjectType=""
+SET /P ProjectType=Type 1, 2, or X then press ENTER: 
+IF NOT DEFINED ProjectType GOTO INVALIDENTRY
+IF NOT %ProjectType%==1 IF NOT %ProjectType%==2 IF NOT %ProjectType%==X IF NOT %ProjectType%==x GOTO INVALIDENTRY
 IF %ProjectType%==1 GOTO ACP
 IF %ProjectType%==2 GOTO SUITEAPP
-ECHO Invalid entry.
+IF %ProjectType%==x GOTO END
+IF %ProjectType%==X GOTO END
+
+:INVALIDENTRY
+CLS
+ECHO.
+ECHO ERROR: Invalid project type entry.  1, 2, or X was expected.
+ECHO.
 GOTO PROJECTMENU
+
 :ACP
 SET /P ProjectName=Enter a project name: 
 GOTO CREATEPROJECT
@@ -39,8 +52,12 @@ IF %ProjectType%==2 CD %PublisherID%.%ProjectID%
 MKDIR Objects
 MKDIR FileCabinet
 IF %ProjectType%==1 MKDIR AccountConfiguration
+IF %ProjectType%==2 MKDIR InstallationPreferences
 IF %ProjectType%==1 MKDIR FileCabinet\SuiteScripts
 IF %ProjectType%==1 MKDIR FileCabinet\SuiteScripts\.attributes
+IF %ProjectType%==1 MKDIR FileCabinet\Templates
+IF %ProjectType%==1 MKDIR "FileCabinet\Templates\E-mail Templates"
+IF %ProjectType%==1 MKDIR "FileCabinet\Templates\Marketing Templates"
 IF %ProjectType%==2 MKDIR FileCabinet\SuiteApps
 IF %ProjectType%==2 MKDIR FileCabinet\SuiteApps\%PublisherID%.%ProjectID%
 IF %ProjectType%==2 MKDIR FileCabinet\SuiteApps\%PublisherID%.%ProjectID%\.attributes
@@ -79,3 +96,5 @@ ECHO.
 ECHO End of script.
 ECHO Edit the .sdf file in the new project folder to complete the process.
 ECHO In the .sdf file, specify your account ID, login, and account URL.
+CD ..
+:END
