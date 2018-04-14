@@ -20,19 +20,19 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
   <metadata>
     <id>sdfcli</id>
     <version>18.1.1</version>
-    <packageSourceUrl>https://github.com/limebox/sdf/raw/18.1.1/Files/chocolatey/sdfcli.18.1.1.nupkg</packageSourceUrl>
+    <packageSourceUrl>https://cdn.rawgit.com/limebox/sdf/18.1.1/Files/chocolatey/sdfcli.18.1.1.nupkg</packageSourceUrl>
 	<owners>TJ Tyrrell</owners>
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <title>NetSuite SDF cli Tool</title>
     <authors>Oracle NetSuite</authors>
     <projectUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=chapter_4779302061.html</projectUrl>
-    <iconUrl>https://github.com/limebox/sdf/raw/18.1.1/Files/sdf-sdk.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/limebox/sdf/18.1.1/Files/sdf-sdk.png</iconUrl>
     <copyright>2018 Oracle-NetSuite</copyright>
-    <licenseUrl>https://github.com/limebox/sdf/raw/18.1.1/LICENSE</licenseUrl>
+    <licenseUrl>https://cdn.rawgit.com/limebox/sdf/18.1.1/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html</projectSourceUrl>
-    <docsUrl>https://system.eu1.netsuite.com/app/help/helpcenter.nl?fid=book_4702638251.html</docsUrl>
+    <docsUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=book_4702638251.html</docsUrl>
     <tags>NetSuite Oracle SDF CLI SuiteCloud Development Framework</tags>
     <summary>This is an installer app for the NetSuite SDF SDK / CLI tool, I will keep this as up-to-date as possible (specifically during major releases from NetSuite. Dependencies are [JDK8](https://chocolatey.org/packages/jdk8) and [Maven](https://chocolatey.org/packages/maven) (they will autoinstall).</summary>
     <description>This is merely a script that follows the installation instructions from the [NetSuite Help Center](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html) (requires login). The installation directory is: C:\Users\YOURUSER\sdfcli and is only available to the user installing the product.
