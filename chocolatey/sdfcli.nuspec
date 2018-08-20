@@ -19,17 +19,17 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sdfcli</id>
-    <version>18.1.1</version>
-    <packageSourceUrl>https://cdn.rawgit.com/limebox/sdf/18.1.1/Files/chocolatey/sdfcli.18.1.1.nupkg</packageSourceUrl>
+    <version>18.1.2</version>
+    <packageSourceUrl>https://cdn.rawgit.com/limebox/sdf/18.1.2/Files/chocolatey/sdfcli.18.1.2.nupkg</packageSourceUrl>
 	<owners>TJ Tyrrell</owners>
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <title>NetSuite SDF cli Tool</title>
     <authors>Oracle NetSuite</authors>
     <projectUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=chapter_4779302061.html</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/limebox/sdf/18.1.1/Files/sdf-sdk.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/limebox/sdf/18.1.2/Files/sdf-sdk.png</iconUrl>
     <copyright>2018 Oracle-NetSuite</copyright>
-    <licenseUrl>https://cdn.rawgit.com/limebox/sdf/18.1.1/LICENSE</licenseUrl>
+    <licenseUrl>https://cdn.rawgit.com/limebox/sdf/18.1.2/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html</projectSourceUrl>
     <docsUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=book_4702638251.html</docsUrl>
@@ -39,7 +39,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
     I do not own the rights to SDF, those rights are included in the attached license.
     </description>
-    <releaseNotes>Version 18.1.1 - Release for 18.1.1</releaseNotes>
+    <releaseNotes>Version 18.1.2 - Release for 18.1.2</releaseNotes>
     <!-- =============================== -->      
 
     <dependencies>
