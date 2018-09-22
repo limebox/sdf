@@ -19,12 +19,12 @@ The axis.jar and NetSuiteWebService.jar files are the ones needed for the SDK. T
 ## Chocolatey
 
 ### Checklist
-..- Did you download the latest Windows suplemental files from the NetSuite help center?
-..- Did you update the .jar file reference names in the VERIFICATION.txt file?
-..- Did you update the .md5 value for the downloaded files?
-..- Did you update the .jar file reference names in the sdfcli.nuspec file?
-..- Did you update the .jar file reference name in the pom.xml file?
-..- Did you delete the old .jar files?
+* Did you download the latest Windows suplemental files from the NetSuite help center?
+* Did you update the .jar file reference names in the VERIFICATION.txt file?
+* Did you update the .md5 value for the downloaded files?
+* Did you update the .jar file reference names in the sdfcli.nuspec file?
+* Did you update the .jar file reference name in the pom.xml file?
+* Did you delete the old .jar files?
 
 ### Setting the MD5 hash
 
@@ -44,34 +44,34 @@ Before submitting to the Chocolatey store, you will need to test locally.
 
 Run these commands when in the /Files/chocolatey folder (the first one uninstalls previous versions of the sdfcli - which is required to get a proper test of the project).
 
+The command must be run in a PowerShell or CMD window running as Admin (Git Bash or similar cli tool will not work).
+
+If you have a previous version of the sdfcli installed you will need to remove that first.
+
 ```cmd
 choco uninstall sdfcli
 choco install sdfcli -dv -s . -source "'.;https://chocolatey.org/api/v2/'"
 ```
 
-The command must be run in a PowerShell or CMD window running as Admin (Git Bash or similar cli tool will not work).
-
-If you have a previous version of the sdfcli installed you will need to remove that first.
-
 Once a build works, push to Chocolatey from the same command line:
+
 ```cmd
-choco push sdfcli.18.1.2.nupkg -s https://push.chocolatey.org/
+choco push sdfcli.XX.X.X.nupkg -s https://push.chocolatey.org/
 ```
 
 You will need an API key to the Limebox Chocolatey account. This will not be publically shared, you must be a part of the Limebox organization to push this product. Pull requests on this project will need to be approved by a Limebox moderator to then be submitted to Chocolatey.
 
-
 ## Brew
 
 ### Checklist
-..- Did you download the latest Mac suplemental files from the NetSuite help center?
-..- Did you replace the default SDFSDK reference location in the sdfcli file (SDFSDK_PATH=/usr/local/Cellar/sdfcli/XX.X.X/libexec/)
-..- Did you update the .jar file reference name in the pom.xml file?
-..- Did you update the .jar file reference name in the sdfsdk.rb file?
-..- Did you package the project inside a .tar.gz file?
-..- Did you update the SHA256 value for the .tar.gz file created for the project?
-..- Did you delete the old .jar files?
-..- Did you update the /share/man/sdfsdk to the latest version of the manual from the CLI tool?
+* Did you download the latest Mac suplemental files from the NetSuite help center?
+* Did you replace the default SDFSDK reference location in the sdfcli file (SDFSDK_PATH=/usr/local/Cellar/sdfcli/XX.X.X/libexec/)
+* Did you update the .jar file reference name in the pom.xml file?
+* Did you update the .jar file reference name in the sdfsdk.rb file?
+* Did you package the project inside a .tar.gz file?
+* Did you update the SHA256 value for the .tar.gz file created for the project?
+* Did you delete the old .jar files?
+* Did you update the /share/man/sdfsdk to the latest version of the manual from the CLI tool?
 
 Since brew won't allow me to officially post this on the brew list, so the ruby recipe needs to be updated on the [Limebox NetSuite Homebrew repo](https://github.com/limebox/homebrew-netsuite). It must point to the file hosted on this repository, /Files/brew/sdfcdk-18.1.2.tar.gz. Don't forget to update the SHA256 of the .tar.gz file by running:
 
