@@ -1,145 +1,197 @@
-shareSuiteCloud Development Framework CLI (com.netsuite.ide.core_2017.1.2)
+SuiteCloud Development Framework CLI (com.netsuite.ide.core_2018.2.0)
 Usage: com.netsuite.ide.tool.SuiteApp [command] [options]
 Commands:
 
-    adddependencies                 Add the missing dependencies to the manifest file.
-                                    Syntax: adddependencies [-account 0000001] [-all] [-email test@netsuiteide.com] [-feature CUSTOMRECORD:required [...]] [-file /js/test.js [...]] [-object scriptid [...]] -p c:/project/ [-role 3] [-url system.netsuite.com]
-                                    Option(s):
-                                        -account              = Optional. The account id. Overrides the account set in the .sdf file.
-                                        -all                  = Optional. Adds all missing dependencies to the SuiteCloud project.  When specified, ensure that you do not use the -feature, -file, and -object options.
-                                        -email                = Optional. The user's email. Overrides the email set in the .sdf file.
-                                        -feature              = Optional. Specifies the feature dependency references to add to the SuiteCloud project.  Each reference is a name:value pair that is delimited by a space.  For example: CUSTOMRECORD:required ACCOUNTING:optional.  When specified, ensure that you do not use the -all option.
-                                        -file                 = Optional. Specifies the files to add to the SuiteCloud project.  When specified, ensure that you do not use the -all option.
-                                        -object               = Optional. Specifies the object script IDs to add to the SuiteCloud project.  When specified, ensure that you do not use the -all option..
-                                        -p or -project        = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
-                                        -role                 = Optional. The role id. Overrides the role id set in the .sdf file.
-                                        -url                  = Optional. The environment url. Overrides the url set in the .sdf file.
+    adddependencies                   Add the missing dependencies to the manifest file.
+                                      Syntax: adddependencies [-account 0000001] [-all] [-email test@netsuiteide.com] [-feature CUSTOMRECORD:required [...]] [-file /js/test.js [...]] [-object scriptid [...]] -p c:/project/ [-role 3] [-url system.netsuite.com]
+                                      Option(s):
+                                          -account                = Optional. The account id. Overrides the account set in the .sdf file.
+                                          -all                    = Optional. Adds all missing dependencies to the SuiteCloud project.  When specified, ensure that you do not use the -feature, -file, and -object options.
+                                          -email                  = Optional. The user's email. Overrides the email set in the .sdf file.
+                                          -feature                = Optional. Specifies the feature dependency references to add to the SuiteCloud project.  Each reference is a name:value pair that is delimited by a space.  For example: CUSTOMRECORD:required ACCOUNTING:optional.  When specified, ensure that you do not use the -all option.
+                                          -file                   = Optional. Specifies the files to add to the SuiteCloud project.  When specified, ensure that you do not use the -all option.
+                                          -object                 = Optional. Specifies the object script IDs to add to the SuiteCloud project.  When specified, ensure that you do not use the -all option..
+                                          -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
+                                          -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -url                    = Optional. The environment url. Overrides the url set in the .sdf file.
 
-    project                         Set the folder or zip file containing the project. Once specified it is used as the default by later commands.
-                                    Syntax: project [-p] c:/project/
-                                    Option(s):
-                                        -p or -project        = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
+    createproject                     Create a SuiteCloud Project.
+                                      Syntax: createproject [-o] -pd d:/foo/bar [-pi foobar] -pn FooBar [-pui com.netsuite] [-pv 1.0.0] -t ACCOUNTCUSTOMIZATION
+                                      Option(s):
+                                          -o or -overwrite        = Optional. Indicates that the existing project will be overwritten.
+                                          -pd or -parentdirectory = Sets the parent directory where the project will be created.
+                                          -pi or -projectid       = Optional. The project id. This is mandatory when type specified is SUITEAPP.
+                                          -pn or -projectname     = The project name.
+                                          -pui or -publisherid    = Optional. The publisher id. This is mandatory when type specified is SUITEAPP.
+                                          -pv or -projectversion  = Optional. The project version. This is mandatory when type specified is SUITEAPP.
+                                          -t or -type             = The project type. Can be ACCOUNTCUSTOMIZATION or SUITEAPP
 
-    deploy                          Deploys the folder or zip file containing the project. Project folder is compressed to a zip file before deployment.
-                                    Syntax: deploy [-account 0000001] [-email test@netsuiteide.com] [-l d:/path/test.log] [-np] -p c:/project/ [-role 3] [-sv] [-url system.netsuite.com] [-v]
-                                    Option(s):
-                                        -account              = Optional. The account id. Overrides the account set in the .sdf file.
-                                        -email                = Optional. The user's email. Overrides the email set in the .sdf file.
-                                        -l or -log            = Optional. Sets the deployment log file location, as either a directory or a file name. If it is a directory, a default log file is generated in the specified location. If a log file already exists in the specified location, deployment log details are appended to that existing file.
-                                        -np or -no_preview    = Optional. Indicates that the preview step should be skipped.
-                                        -p or -project        = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
-                                        -role                 = Optional. The role id. Overrides the role id set in the .sdf file.
-                                        -sv or -sync_validate = Optional. Indicates that syncing of metadata should occur before deployment, with any errors stopping the deployment.
-                                        -url                  = Optional. The environment url. Overrides the url set in the .sdf file.
-                                        -v or -validate       = Optional. Indicates that local validation of project using SDF metadata should occur before deployment, with any errors stopping the deployment.
+    project                           Set the folder or zip file containing the project. Once specified it is used as the default by later commands.
+                                      Syntax: project [-p] c:/project/
+                                      Option(s):
+                                          -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
 
-    importbundle                    Import a bundle and convert it to an Account Customization project.
-                                    Syntax: importbundle [-account 0000001] -bundleid 123 [-email test@netsuiteide.com] [-p] c:/project/ [-role 3] [-url system.netsuite.com]
-                                    Option(s):
-                                        -account              = Optional. The account id. Overrides the account set in the .sdf file.
-                                        -bundleid             = The bundle id. Used to specify which bundle to import.
-                                        -email                = Optional. The user's email. Overrides the email set in the .sdf file.
-                                        -p or -project        = Default option. Folder to import the bundle into. Account details will be loaded from a .sdf file inside this folder if it exists. Overrides the previously set default project folder.
-                                        -role                 = Optional. The role id. Overrides the role id set in the .sdf file.
-                                        -url                  = Optional. The environment url. Overrides the url set in the .sdf file.
+    deploy                            Deploys the folder or zip file containing the project. Project folder is compressed to a zip file before deployment.
+                                      Syntax: deploy [-account 0000001] [-accountspecificvalues WARNING] [-applycontentprotection T] [-email test@netsuiteide.com] [-l d:/path/test.log] [-np] -p c:/project/ [-role 3] [-url system.netsuite.com] [-v]
+                                      Option(s):
+                                          -account                = Optional. The account id. Overrides the account set in the .sdf file.
+                                          -accountspecificvalues  = Optional. Flag account-specific values as either a warning or an error.
+                                          -applycontentprotection = Optional. Indicates that content protection will be applied.
+                                          -email                  = Optional. The user's email. Overrides the email set in the .sdf file.
+                                          -l or -log              = Optional. Sets the deployment log file location, as either a directory or a file name. If it is a directory, a default log file is generated in the specified location. If a log file already exists in the specified location, deployment log details are appended to that existing file.
+                                          -np or -no_preview      = Optional. Indicates that the preview step should be skipped.
+                                          -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
+                                          -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -url                    = Optional. The environment url. Overrides the url set in the .sdf file.
+                                          -v or -validate         = Optional. Indicates that local validation of project should occur before deployment, with any errors stopping the deployment.
 
-    importfiles                     Import files from a NetSuite account.
-                                    Syntax: importfiles [-account 0000001] [-email test@netsuiteide.com] [-excludeproperties] -p c:/project/ [-paths] "/SuiteScripts/test.js" [-role 3] [-url system.netsuite.com]
-                                    Option(s):
-                                        -account              = Optional. The account id. Overrides the account set in the .sdf file.
-                                        -email                = Optional. The user's email. Overrides the email set in the .sdf file.
-                                        -excludeproperties    = Optional. Exclude file and folder properties from the import.
-                                        -p or -project        = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
-                                        -paths                = Default option. Specify the file cabinet file paths of the files to import.
-                                        -role                 = Optional. The role id. Overrides the role id set in the .sdf file.
-                                        -url                  = Optional. The environment url. Overrides the url set in the .sdf file.
+    importbundle                      Import a bundle and convert it to an Account Customization project.
+                                      Syntax: importbundle [-account 0000001] -bundleid 123 [-email test@netsuiteide.com] [-p] c:/project/ [-role 3] [-url system.netsuite.com]
+                                      Option(s):
+                                          -account                = Optional. The account id. Overrides the account set in the .sdf file.
+                                          -bundleid               = The bundle id. Used to specify which bundle to import.
+                                          -email                  = Optional. The user's email. Overrides the email set in the .sdf file.
+                                          -p or -project          = Default option. Folder to import the bundle into. Account details will be loaded from a .sdf file inside this folder if it exists. Overrides the previously set default project folder.
+                                          -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -url                    = Optional. The environment url. Overrides the url set in the .sdf file.
 
-    importobjects                   Import custom objects from a NetSuite account.
-                                    Syntax: importobjects [-account 0000001] -destinationfolder /Objects [-email test@netsuiteide.com] -p c:/project/ [-role 3] -scriptid customrecord_tes01 customrecord_test02 [...] -type customrecordtype [-url system.netsuite.com]
-                                    Option(s):
-                                        -account              = Optional. The account id. Overrides the account set in the .sdf file.
-                                        -destinationfolder    = Indicate where the custom objects will be saved. Specify the folder relative to the project (e.g. /Objects/testsubfolder). This must start with "/Objects".
-                                        -email                = Optional. The user's email. Overrides the email set in the .sdf file.
-                                        -p or -project        = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
-                                        -role                 = Optional. The role id. Overrides the role id set in the .sdf file.
-                                        -scriptid             = Import custom objects with the specified script ids. Use a space separated list to indicate multiple script ids. Use "ALL" to import all custom objects of the specified type.
-                                        -type                 = Import custom objects that are of the specified type. Only a single type or "ALL" can be specified. Use "ALL" to import all custom objects.
-                                        -url                  = Optional. The environment url. Overrides the url set in the .sdf file.
+    importconfiguration               Import account configuration from a NetSuite account.
+                                      Syntax: importconfiguration [-account 0000001] -configurationid features:all_features [...] [-email test@netsuiteide.com] -p c:/project/ [-role 3] [-url system.netsuite.com]
+                                      Option(s):
+                                          -account                = Optional. The account id. Overrides the account set in the .sdf file.
+                                          -configurationid        = Import account configuration with the specified configuration ids. Use a space separated list to indicate multiple configuration ids.
+                                          -email                  = Optional. The user's email. Overrides the email set in the .sdf file.
+                                          -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
+                                          -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -url                    = Optional. The environment url. Overrides the url set in the .sdf file.
 
-    listbundles                     List bundles from a NetSuite account.
-                                    Syntax: listbundles -account 0000001 -email test@netsuiteide.com -role 3 -url system.netsuite.com
-                                    Option(s):
-                                        -account              = The account id.
-                                        -email                = The user's email.
-                                        -role                 = The role id.
-                                        -url                  = The environment url.
+    importfiles                       Import files from a NetSuite account.
+                                      Syntax: importfiles [-account 0000001] [-email test@netsuiteide.com] [-excludeproperties] -p c:/project/ [-paths] "/SuiteScripts/test.js" [-role 3] [-url system.netsuite.com]
+                                      Option(s):
+                                          -account                = Optional. The account id. Overrides the account set in the .sdf file.
+                                          -email                  = Optional. The user's email. Overrides the email set in the .sdf file.
+                                          -excludeproperties      = Optional. Exclude file and folder properties from the import.
+                                          -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
+                                          -paths                  = Default option. Specify the file cabinet file paths of the files to import.
+                                          -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -url                    = Optional. The environment url. Overrides the url set in the .sdf file.
 
-    listfiles                       List files from a NetSuite account.
-                                    Syntax: listfiles -account 0000001 -email test@netsuiteide.com [-folder] "/SuiteScripts" -role 3 -url system.netsuite.com
-                                    Option(s):
-                                        -account              = The account id.
-                                        -email                = The user's email.
-                                        -folder               = Default option. Specify the file cabinet folder path. This is recursive, all files under subfolders will also be retrieved.
-                                        -role                 = The role id.
-                                        -url                  = The environment url.
+    importobjects                     Import custom objects from a NetSuite account.
+                                      Syntax: importobjects [-account 0000001] [-appid org.mycompany.helloworldapp] -destinationfolder /Objects [-email test@netsuiteide.com] -p c:/project/ [-role 3] -scriptid customrecord_tes01 customrecord_test02 [...] -type customrecordtype [-url system.netsuite.com]
+                                      Option(s):
+                                          -account                = Optional. The account id. Overrides the account set in the .sdf file.
+                                          -appid                  = Optional. The application id. If specified, only custom objects that are associated with the app id are imported.  Otherwise, only custom objects that are not associated with an app id are imported.
+                                          -destinationfolder      = Indicate where the custom objects will be saved. Specify the folder relative to the project (e.g. /Objects/testsubfolder). This must start with "/Objects".
+                                          -email                  = Optional. The user's email. Overrides the email set in the .sdf file.
+                                          -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
+                                          -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -scriptid               = Import custom objects with the specified script ids. Use a space separated list to indicate multiple script ids. Use "ALL" to import all custom objects of the specified type.
+                                          -type                   = Import custom objects that are of the specified type. Only a single type or "ALL" can be specified. Use "ALL" to import all custom objects.
+                                          -url                    = Optional. The environment url. Overrides the url set in the .sdf file.
 
-    listmissingdependencies         List the missing dependencies for a project.
-                                    Syntax: listmissingdependencies [-account 0000001] [-email test@netsuiteide.com] [-l d:/path/test.log] -p c:/project/ [-role 3] [-url system.netsuite.com]
-                                    Option(s):
-                                        -account              = Optional. The account id. Overrides the account set in the .sdf file.
-                                        -email                = Optional. The user's email. Overrides the email set in the .sdf file.
-                                        -l or -log            = Optional. Sets the log file location, as either a directory or a file name. If it is a directory, a default log file is generated in the specified location. If a log file already exists in the specified location, log details are appended to that existing file.
-                                        -p or -project        = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
-                                        -role                 = Optional. The role id. Overrides the role id set in the .sdf file.
-                                        -url                  = Optional. The environment url. Overrides the url set in the .sdf file.
+    issuetoken                        Issue a token.
+                                      Syntax: issuetoken -account 0000001 -email test@netsuiteide.com -role 3 -url system.netsuite.com
+                                      Option(s):
+                                          -account                = The account id.
+                                          -email                  = The user's email.
+                                          -role                   = The role id.
+                                          -url                    = The environment url.
 
-    listobjects                     List custom objects from a NetSuite account.
-                                    Syntax: listobjects -account 0000001 -email test@netsuiteide.com -role 3 [-scriptid customrecord] [-type customrecordtype workflow [...]] -url system.netsuite.com
-                                    Option(s):
-                                        -account              = The account id.
-                                        -email                = The user's email.
-                                        -role                 = The role id.
-                                        -scriptid             = Optional. List custom objects that contain the specified script id. If this parameter is not specified, list all custom objects regardless of script id.
-                                        -type                 = Optional. List custom objects that are of the specified types. Use a space separated list to indicate multiple types. If this parameter is not specified, list all custom objects regardless of type.
-                                        -url                  = The environment url.
+    listbundles                       List bundles from a NetSuite account.
+                                      Syntax: listbundles -account 0000001 -email test@netsuiteide.com -role 3 -url system.netsuite.com
+                                      Option(s):
+                                          -account                = The account id.
+                                          -email                  = The user's email.
+                                          -role                   = The role id.
+                                          -url                    = The environment url.
 
-    preview                         Previews the deployment steps of a folder or zip file containing the project. Project folder is compressed to a zip file before previewing.
-                                    Syntax: preview [-account 0000001] [-email test@netsuiteide.com] [-l d:/path/test.log] -p c:/project/ [-role 3] [-url system.netsuite.com]
-                                    Option(s):
-                                        -account              = Optional. The account id. Overrides the account set in the .sdf file.
-                                        -email                = Optional. The user's email. Overrides the email set in the .sdf file.
-                                        -l or -log            = Optional. Sets the preview log file location, as either a directory or a file name. If it is a directory, a default log file is generated in the specified location. If a log file already exists in the specified location, preview log details are appended to that existing file.
-                                        -p or -project        = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
-                                        -role                 = Optional. The role id. Overrides the role id set in the .sdf file.
-                                        -url                  = Optional. The environment url. Overrides the url set in the .sdf file.
+    listconfiguration                 List available account configuration.
+                                      Syntax: listconfiguration -account 0000001 -email test@netsuiteide.com -role 3 -url system.netsuite.com
+                                      Option(s):
+                                          -account                = The account id.
+                                          -email                  = The user's email.
+                                          -role                   = The role id.
+                                          -url                    = The environment url.
 
-    updatecustomrecordwithinstances Update the custom record object with instances.
-                                    Syntax: updatecustomrecordwithinstances [-account 0000001] [-email test@netsuiteide.com] -p c:/project/ [-role 3] -scriptid customrecord_test [-url system.netsuite.com]
-                                    Option(s):
-                                        -account              = Optional. The account id. Overrides the account set in the .sdf file.
-                                        -email                = Optional. The user's email. Overrides the email set in the .sdf file.
-                                        -p or -project        = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
-                                        -role                 = Optional. The role id. Overrides the role id set in the .sdf file.
-                                        -scriptid             = The script id of the custom record object.
-                                        -url                  = Optional. The environment url. Overrides the url set in the .sdf file.
+    listfiles                         List files from a NetSuite account.
+                                      Syntax: listfiles -account 0000001 -email test@netsuiteide.com [-folder] "/SuiteScripts" -role 3 -url system.netsuite.com
+                                      Option(s):
+                                          -account                = The account id.
+                                          -email                  = The user's email.
+                                          -folder                 = Default option. Specify the file cabinet folder path. This is recursive, all files under subfolders will also be retrieved.
+                                          -role                   = The role id.
+                                          -url                    = The environment url.
 
-    update                          Update existing custom objects in the project folder from a NetSuite account.
-                                    Syntax: update [-account 0000001] [-email test@netsuiteide.com] -p c:/project/ [-role 3] [-scriptid] scriptid [...] [-url system.netsuite.com]
-                                    Option(s):
-                                        -account              = Optional. The account id. Overrides the account set in the .sdf file.
-                                        -email                = Optional. The user's email. Overrides the email set in the .sdf file.
-                                        -p or -project        = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
-                                        -role                 = Optional. The role id. Overrides the role id set in the .sdf file.
-                                        -scriptid             = Default option. Lists the script IDs of custom objects to be updated.
-                                        -url                  = Optional. The environment url. Overrides the url set in the .sdf file.
+    listmissingdependencies           List the missing dependencies for a project.
+                                      Syntax: listmissingdependencies [-account 0000001] [-email test@netsuiteide.com] [-l d:/path/test.log] -p c:/project/ [-role 3] [-url system.netsuite.com]
+                                      Option(s):
+                                          -account                = Optional. The account id. Overrides the account set in the .sdf file.
+                                          -email                  = Optional. The user's email. Overrides the email set in the .sdf file.
+                                          -l or -log              = Optional. Sets the log file location, as either a directory or a file name. If it is a directory, a default log file is generated in the specified location. If a log file already exists in the specified location, log details are appended to that existing file.
+                                          -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
+                                          -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -url                    = Optional. The environment url. Overrides the url set in the .sdf file.
 
-    validate                        Validate the folder or zip file containing the project.
-                                    Syntax: validate [-account 0000001] [-email test@netsuiteide.com] [-l d:/path/test.log] -p c:/project/ [-role 3] [-server] [-url system.netsuite.com]
-                                    Option(s):
-                                        -account              = Optional. The account id. Overrides the account set in the .sdf file.
-                                        -email                = Optional. The user's email. Overrides the email set in the .sdf file.
-                                        -l or -log            = Optional. Sets the validation log file location, as either a directory or a file name. If it is a directory, a default log file is generated in the specified location. If a log file already exists in the specified location, validation log details are appended to that existing file.
-                                        -p or -project        = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
-                                        -role                 = Optional. The role id. Overrides the role id set in the .sdf file.
-                                        -server               = Optional. Indicates that validation will be performed server side.
-                                        -url                  = Optional. The environment url. Overrides the url set in the .sdf file.
+    listobjects                       List custom objects from a NetSuite account.
+                                      Syntax: listobjects -account 0000001 [-appid org.mycompany.helloworldapp] -email test@netsuiteide.com -role 3 [-scriptid customrecord] [-type customrecordtype workflow [...]] -url system.netsuite.com
+                                      Option(s):
+                                          -account                = The account id.
+                                          -appid                  = Optional. The application id. If specified, only custom objects that are associated with the app id are listed.  Otherwise, only custom objects that are not associated with an app id are listed.
+                                          -email                  = The user's email.
+                                          -role                   = The role id.
+                                          -scriptid               = Optional. List custom objects that contain the specified script id. If this parameter is not specified, list all custom objects regardless of script id.
+                                          -type                   = Optional. List custom objects that are of the specified types. Use a space separated list to indicate multiple types. If this parameter is not specified, list all custom objects regardless of type.
+                                          -url                    = The environment url.
+
+    preview                           Previews the deployment steps of a folder or zip file containing the project. Project folder is compressed to a zip file before previewing.
+                                      Syntax: preview [-account 0000001] [-accountspecificvalues WARNING] [-applycontentprotection T] [-email test@netsuiteide.com] [-l d:/path/test.log] -p c:/project/ [-role 3] [-url system.netsuite.com]
+                                      Option(s):
+                                          -account                = Optional. The account id. Overrides the account set in the .sdf file.
+                                          -accountspecificvalues  = Optional. Flag account-specific values as either a warning or an error.
+                                          -applycontentprotection = Optional. Indicates that content protection will be applied.
+                                          -email                  = Optional. The user's email. Overrides the email set in the .sdf file.
+                                          -l or -log              = Optional. Sets the preview log file location, as either a directory or a file name. If it is a directory, a default log file is generated in the specified location. If a log file already exists in the specified location, preview log details are appended to that existing file.
+                                          -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
+                                          -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -url                    = Optional. The environment url. Overrides the url set in the .sdf file.
+
+    revoketoken                       Revoke a token.
+                                      Syntax: revoketoken -account 0000001 -email test@netsuiteide.com -role 3 -url system.netsuite.com
+                                      Option(s):
+                                          -account                = The account id.
+                                          -email                  = The user's email.
+                                          -role                   = The role id.
+                                          -url                    = The environment url.
+
+    updatecustomrecordwithinstances   Update the custom record object with instances.
+                                      Syntax: updatecustomrecordwithinstances [-account 0000001] [-email test@netsuiteide.com] -p c:/project/ [-role 3] -scriptid customrecord_test [-url system.netsuite.com]
+                                      Option(s):
+                                          -account                = Optional. The account id. Overrides the account set in the .sdf file.
+                                          -email                  = Optional. The user's email. Overrides the email set in the .sdf file.
+                                          -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
+                                          -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -scriptid               = The script id of the custom record object.
+                                          -url                    = Optional. The environment url. Overrides the url set in the .sdf file.
+
+    update                            Update existing custom objects in the project folder from a NetSuite account.
+                                      Syntax: update [-account 0000001] [-email test@netsuiteide.com] -p c:/project/ [-role 3] [-scriptid] scriptid [...] [-url system.netsuite.com]
+                                      Option(s):
+                                          -account                = Optional. The account id. Overrides the account set in the .sdf file.
+                                          -email                  = Optional. The user's email. Overrides the email set in the .sdf file.
+                                          -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
+                                          -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -scriptid               = Default option. Lists the script IDs of custom objects to be updated.
+                                          -url                    = Optional. The environment url. Overrides the url set in the .sdf file.
+
+    validate                          Validate the folder or zip file containing the project.
+                                      Syntax: validate [-account 0000001] [-accountspecificvalues WARNING] [-applycontentprotection T] [-email test@netsuiteide.com] [-l d:/path/test.log] -p c:/project/ [-role 3] [-server] [-url system.netsuite.com]
+                                      Option(s):
+                                          -account                = Optional. The account id. Overrides the account set in the .sdf file.
+                                          -accountspecificvalues  = Optional. Flag account-specific values as either a warning or an error.
+                                          -applycontentprotection = Optional. Indicates that content protection will be applied.
+                                          -email                  = Optional. The user's email. Overrides the email set in the .sdf file.
+                                          -l or -log              = Optional. Sets the validation log file location, as either a directory or a file name. If it is a directory, a default log file is generated in the specified location. If a log file already exists in the specified location, validation log details are appended to that existing file.
+                                          -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
+                                          -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -server                 = Optional. Indicates that validation will be performed server side.
+                                          -url                    = Optional. The environment url. Overrides the url set in the .sdf file.

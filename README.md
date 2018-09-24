@@ -66,21 +66,21 @@ You will need an API key to the Limebox Chocolatey account. This will not be pub
 ### Checklist
 * Did you download the latest Mac suplemental files from the NetSuite help center?
 * Did you replace the default SDFSDK reference location in the sdfcli file (SDFSDK_PATH=/usr/local/Cellar/sdfcli/XX.X.X/libexec/)
-* Did you update the .jar file reference name in the pom.xml file?
+* Did you confirm the .jar file reference name in the pom.xml file?
 * Did you update the .jar file reference name in the sdfsdk.rb file?
 * Did you package the project inside a .tar.gz file?
 * Did you update the SHA256 value for the .tar.gz file created for the project?
 * Did you delete the old .jar files?
 * Did you update the /share/man/sdfsdk to the latest version of the manual from the CLI tool?
 
-Since brew won't allow me to officially post this on the brew list, so the ruby recipe needs to be updated on the [Limebox NetSuite Homebrew repo](https://github.com/limebox/homebrew-netsuite). It must point to the file hosted on this repository, /Files/brew/sdfcdk-18.1.2.tar.gz. Don't forget to update the SHA256 of the .tar.gz file by running:
+Since brew won't allow me to officially post this on the brew list, so the ruby recipe needs to be updated on the [Limebox NetSuite Homebrew repo](https://github.com/limebox/homebrew-netsuite). It must point to the file hosted on this repository, /Files/brew/sdfcdk-XX.X.X.tar.gz. Don't forget to update the SHA256 of the .tar.gz file by running:
 
 ### Mac
 ```cmd
-openssl sha -sha256 sdfsdk-18.1.2.tar.gz
+openssl sha -sha256 sdfsdk-XX.X.X.tar.gz
 ```
 
 ### PC
 ```cmd
-CertUtil -hashfile sdfsdk-18.1.2.tar.gz SHA256
+CertUtil -hashfile sdfsdk-XX.X.X.tar.gz SHA256
 ```

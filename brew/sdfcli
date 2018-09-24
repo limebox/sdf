@@ -1,5 +1,5 @@
 #!/bin/bash
-SDFSDK_PATH=/usr/local/Cellar/sdfsdk/18.1.2/libexec/
+SDFSDK_PATH=/usr/local/Cellar/sdfsdk/18.2.0/libexec/
 
 if [ ! -d "$SDFSDK_PATH" ]; then
     clear
@@ -52,4 +52,3 @@ if [ ! -f $SDFSDK_PATH/axis.jar ] || [ ! -f $SDFSDK_PATH/NetSuiteWebService.jar 
 fi
 
 mvn -f $SDFSDK_PATH/pom.xml exec:java -Dexec.args="$*"
-
