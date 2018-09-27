@@ -75,6 +75,12 @@ You will need an API key to the Limebox Chocolatey account. This will not be pub
 
 Since brew won't allow me to officially post this on the brew list, so the ruby recipe needs to be updated on the [Limebox NetSuite Homebrew repo](https://github.com/limebox/homebrew-netsuite). It must point to the file hosted on this repository, /Files/brew/sdfcdk-XX.X.X.tar.gz. Don't forget to update the SHA256 of the .tar.gz file by running:
 
+To tar the folder on a Mac, cd into the /brew folder
+
+```cmd
+tar -zcvf ../Files/brew/sdfsdk-XX.X.X.tar.gz ./*
+```
+
 ### Mac
 ```cmd
 openssl sha -sha256 sdfsdk-XX.X.X.tar.gz

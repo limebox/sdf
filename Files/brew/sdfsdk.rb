@@ -2,7 +2,7 @@ class Sdfsdk < Formula
   desc "NetSuite SDF SDK Tool"
   homepage "https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html"
   url "https://github.com/limebox/sdf/raw/18.2.0/Files/brew/sdfsdk-18.2.0.tar.gz"
-  sha256 "6120c2efa1294428d290dbe492b35d8223ecbd34e137515b245cbb2d31bfb45f"
+  sha256 "5a7984bb81053e813ace46c53809f611961f84024d101e314db9d094937e5574"
 
   depends_on "maven" => :build
 
