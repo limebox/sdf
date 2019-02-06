@@ -83,7 +83,7 @@ tar -zcvf ../Files/brew/sdfsdk-XX.X.X.tar.gz ./*
 
 ### Mac
 ```cmd
-openssl sha -sha256 sdfsdk-XX.X.X.tar.gz
+openssl sha256 -sha256 sdfsdk-XX.X.X.tar.gz
 ```
 
 ### PC

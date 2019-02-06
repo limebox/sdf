@@ -1,5 +1,5 @@
 #!/bin/bash
-SDFSDK_PATH=/usr/local/Cellar/sdfsdk/18.2.0/libexec/
+SDFSDK_PATH=/usr/local/Cellar/sdfsdk/18.2.1/libexec/
 
 if [ ! -d "$SDFSDK_PATH" ]; then
     clear
