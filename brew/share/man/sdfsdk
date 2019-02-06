@@ -1,4 +1,4 @@
-SuiteCloud Development Framework CLI (com.netsuite.ide.core_2018.2.0)
+SuiteCloud Development Framework CLI (com.netsuite.ide.core_2018.2.1)
 Usage: com.netsuite.ide.tool.SuiteApp [command] [options]
 Commands:
 
@@ -32,7 +32,7 @@ Commands:
                                           -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
 
     deploy                            Deploys the folder or zip file containing the project. Project folder is compressed to a zip file before deployment.
-                                      Syntax: deploy [-account 0000001] [-accountspecificvalues WARNING] [-applycontentprotection T] [-email test@netsuiteide.com] [-l d:/path/test.log] [-np] -p c:/project/ [-role 3] [-url system.netsuite.com] [-v]
+                                      Syntax: deploy [-account 0000001] [-accountspecificvalues WARNING] [-applycontentprotection T] [-email test@netsuiteide.com] [-l d:/path/test.log] [-np] -p c:/project/ [-role 3] [-sw] [-url system.netsuite.com] [-v]
                                       Option(s):
                                           -account                = Optional. The account id. Overrides the account set in the .sdf file.
                                           -accountspecificvalues  = Optional. Flag account-specific values as either a warning or an error.
@@ -42,6 +42,7 @@ Commands:
                                           -np or -no_preview      = Optional. Indicates that the preview step should be skipped.
                                           -p or -project          = Default option. Required if no default project has been set. Sets the folder or zip file containing the project. Overrides the previously set default project folder or zip file.
                                           -role                   = Optional. The role id. Overrides the role id set in the .sdf file.
+                                          -sw or -skip_warning    = Optional. Indicates that the warning before deployment to production account will be skipped.
                                           -url                    = Optional. The environment url. Overrides the url set in the .sdf file.
                                           -v or -validate         = Optional. Indicates that local validation of project should occur before deployment, with any errors stopping the deployment.
 
@@ -161,6 +162,16 @@ Commands:
                                           -account                = The account id.
                                           -email                  = The user's email.
                                           -role                   = The role id.
+                                          -url                    = The environment url.
+
+    savetoken                         Saves the latest TBA token created from your NetSuite account to use with SDF CLI.
+                                      Syntax: savetoken -account 0000001 -email test@netsuiteide.com -role 3 -tokenkey tokenkey -tokensecret tokensecret -url system.netsuite.com
+                                      Option(s):
+                                          -account                = The account id.
+                                          -email                  = The user's email.
+                                          -role                   = The role id.
+                                          -tokenkey               = The token key.
+                                          -tokensecret            = The token secret.
                                           -url                    = The environment url.
 
     updatecustomrecordwithinstances   Update the custom record object with instances.
