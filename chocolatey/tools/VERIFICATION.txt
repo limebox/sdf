@@ -3,11 +3,11 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The jar files for the SDF CLI can be found here:
-https://system.netsuite.com/download/ide/update_18_2/plugins/com.netsuite.ide.core_2018.2.0.jar
-https://system.netsuite.com/download/ide/update_18_2/plugins/com.netsuite.ide.eclipse.ws_2018.2.0.jar
+https://system.netsuite.com/download/ide/update_18_2/plugins/com.netsuite.ide.core_2018.2.1.jar
+https://system.netsuite.com/download/ide/update_18_2/plugins/com.netsuite.ide.eclipse.ws_2018.2.1.jar
 
-The com.netsuite.ide.eclipse.ws_2018.2.0.jar file is unpacked for this project using the command:
-jar xf com.netsuite.ide.eclipse.ws_2018.2.0.jar
+The com.netsuite.ide.eclipse.ws_2018.2.1.jar file is unpacked for this project using the command:
+jar xf com.netsuite.ide.eclipse.ws_2018.2.1.jar
 
 This produces the two supporting files that are included in this package:
 /axis.jar
@@ -15,7 +15,7 @@ This produces the two supporting files that are included in this package:
 
 Given the special case of how this application needs to be executed (using Apache Maven and JDK), the unreliability of the available file on their server, and when/if they lock it behind a password, I have opted to including the .jar file in this package.
 
-The MD5 of com.netsuite.ide.core_2018.2.0.jar (8/23/2018): d7384253f25598c9ede1bc49d7082045
-The MD5 of com.netsuite.ide.eclipse.ws_2018.2.0.jar (8/23/2018): 685dc15cda3cfb6805ac22b8f1e1122f
- - The MD5 of axis.jar (8/23/2018): 03bea1cc085287a72ecae9f2c71a8659
- - The MD5 of NetSuiteWebService.jar (8/23/2018): c0c6e4124a24b75d99baa3c53cc96709
+The MD5 of com.netsuite.ide.core_2018.2.1.jar (8/23/2018): 455e4e377bbc969beeb1f7ac5c3cfce721ea57ac
+The MD5 of com.netsuite.ide.eclipse.ws_2018.2.1.jar (8/23/2018): 3f3f829906a68022d2384a89a1fa4a947e0002f8
+ - The MD5 of axis.jar (8/23/2018): 9ad239348d73432089497c921b59a3a2529db1c7
+ - The MD5 of NetSuiteWebService.jar (8/23/2018): cb884a06bcea68dc2b3b4f50f716649a159146a2

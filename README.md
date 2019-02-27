@@ -21,12 +21,12 @@ The axis.jar and NetSuiteWebService.jar files are the ones needed for the SDK. T
 ### Checklist
 * Did you download the latest Windows suplemental files from the NetSuite help center?
 * Did you update the .jar file reference names in the VERIFICATION.txt file?
-* Did you update the .md5 value for the downloaded files?
+* Did you update the MD5 value for the downloaded files?
 * Did you update the .jar file reference names in the sdfcli.nuspec file?
 * Did you update the .jar file reference name in the pom.xml file?
 * Did you delete the old .jar files?
 
-### Setting the MD5 hash
+### Getting the MD5 hash
 
 ### PC
 ```cmd

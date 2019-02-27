@@ -19,3 +19,7 @@ $oldpath = (Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentC
 $newpath = "$oldpath;$appDir"
 
 Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value $newPath
+
+$mklinkCommand = 'cmd /c mklink "$appDir\.clicache" "..\.clicache"'
+
+invoke-expression "$mklinkCommand"
