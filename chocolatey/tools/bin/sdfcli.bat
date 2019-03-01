@@ -1,60 +1,29 @@
 @ECHO off
-SET SDFSDK_PATH=[APP_PATH]\
 
-IF NOT EXIST %SDFSDK_PATH%\ GOTO WRONGPATH
-IF NOT EXIST %SDFSDK_PATH%\pom.xml GOTO FILEMISSING
-IF NOT EXIST %SDFSDK_PATH%\com.netsuite.ide.core_*.jar GOTO FILEMISSING
-IF NOT EXIST %SDFSDK_PATH%\axis.jar GOTO EXTRACTJAR
-IF NOT EXIST %SDFSDK_PATH%\NetSuiteWebService.jar GOTO EXTRACTJAR
+set supported_java_version=1.8
+set cli_jar_file_name=cli-2019.1.0.jar
 
-:MAIN
-mvn -f %SDFSDK_PATH%\pom.xml exec:java -Dexec.args="%*"
-GOTO END
+set msg_java_not_installed=Java Runtime Environment is not installed on this machine. Install JRE version %supported_java_version% to run SDF CLI.
+set msg_java_incompatible_version=Your Java version is not compatible with SDF CLI. Install JRE version %supported_java_version%.
+set msg_jar_file_missing=The JAR file could not be found. Download the JAR file from the Help Center into the same directory where the SDF CLI script is stored.
 
-:EXTRACTJAR
-CLS
-ECHO.
-ECHO ERROR: Could not find axis.jar or NetSuiteWebService.jar.
-ECHO.
-ECHO axis.jar or NetSuiteWebService.jar must be extracted from the 
-ECHO com.netsuite.ide.eclipse.ws JAR file and placed in the
-ECHO %SDFSDK_PATH% folder.
-ECHO.
-ECHO Oracle recommends using an unzip utility to extract the contents of the
-ECHO com.netsuite.ide.eclipse.ws JAR file into the %SDFSDK_PATH% folder.
-ECHO.
-ECHO For more information about SDF SDK installation, see:
-ECHO https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html
-GOTO END
+java -version 1>nul 2>nul || (
+   echo %msg_java_not_installed%
+   exit /b 1
+)
+for /f tokens^=2-5^ delims^=^" %%j in ('java -fullversion 2^>^&1') do set "installed_java_version=%%j%%k%%l%%m"
 
-:FILEMISSING
-CLS
-ECHO.
-ECHO ERROR: A file was missing from %SDFSDK_PATH%.
-ECHO.
-ECHO The following files are required to run SDF CLI:
-ECHO     - axis.jar 
-ECHO     - com.netsuite.ide.core_^<NetSuite-version^>.jar
-ECHO     - NetSuiteWebService.jar 
-ECHO     - pom.xml
-ECHO.
-ECHO Check your SDF SDK installation path, and make sure that you
-ECHO downloaded or extracted the files listed above.
-ECHO.
-ECHO For more information about SDF SDK installation, see:
-ECHO https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html
-GOTO END
+if not "%installed_java_version:~0,3%" == "%supported_java_version%" (
+	echo %msg_java_incompatible_version%
+	exit /b 1
+)
 
-:WRONGPATH
-CLS
-ECHO.
-ECHO ERROR: SDF SDK was not found in %SDFSDK_PATH%.
-ECHO.
-ECHO Edit this batch file and set the SDFSDK_PATH environment variable to
-ECHO the correct path of your SDF SDK installation.
-ECHO.
-ECHO For more information about SDF SDK installation, see:
-ECHO https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html
-GOTO END
+set cli_directory=%~dp0
+set cli_jar_file_path="%cli_directory%%cli_jar_file_name%"
 
-:END
+if not exist %cli_jar_file_path% (
+    echo %msg_jar_file_missing%
+	exit /b 1
+)
+
+java -jar "%cli_jar_file_path%" %*
