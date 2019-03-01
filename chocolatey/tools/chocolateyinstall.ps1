@@ -2,13 +2,20 @@
 $bin = Join-Path $root "bin"
 $installParent = $env:USERPROFILE
 
-$testPath = "$installParent\sdfcli"
+$version = "19.1.0"
+$testParent = "$installParent\sdfcli"
+$testPath = "$installParent\sdfcli\$version"
 
-If(!(test-path $testPath)) {
-    New-Item "$installParent\sdfcli" -type directory
+If(!(test-path $testParent)) {
+    New-Item "$testParent" -type directory
 }
 
-$appDir = Join-Path $installParent "sdfcli"
+If(!(test-path $testPath)) {
+    New-Item "$testPath" -type directory
+}
+
+$appParent = Join-Path $installParent "sdfcli"
+$appDir = Join-Path $installParent "sdfcli\$version"
 
 Copy-Item "$bin\*" $appDir
 
@@ -16,10 +23,12 @@ Copy-Item "$bin\*" $appDir
 
 $oldpath = (Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).path
 
-$newpath = "$oldpath;$appDir"
+$newpath = "$oldpath;$appParent"
 
 Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value $newPath
 
-$mklinkCommand = 'cmd /c mklink "$appDir\.clicache" "..\.clicache"'
+$mklinkclicache = 'cmd /c mklink "$appDir\.clicache" "..\.clicache"'
+$mklinksdfcli = 'cmd /c mklink "$appParent\sdfcli" ".\$version\sdfcli.bat"'
 
 invoke-expression "$mklinkCommand"
+invoke-expression "$mklinksdfcli"
