@@ -19,17 +19,17 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sdfcli</id>
-    <version>18.2.1</version>
-    <packageSourceUrl>https://cdn.rawgit.com/limebox/sdf/18.2.1/Files/chocolatey/sdfcli.18.2.1.nupkg</packageSourceUrl>
+    <version>19.1.0</version>
+    <packageSourceUrl>https://cdn.rawgit.com/limebox/sdf/19.1.0/Files/chocolatey/sdfcli.19.1.0.nupkg</packageSourceUrl>
 	<owners>TJ Tyrrell</owners>
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <title>NetSuite SDF SDK Tool</title>
     <authors>Oracle NetSuite</authors>
-    <projectUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=chapter_4779302061.html</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/limebox/sdf/18.2.1/Files/sdf-sdk.png</iconUrl>
-    <copyright>2018 Oracle-NetSuite</copyright>
-    <licenseUrl>https://cdn.rawgit.com/limebox/sdf/18.2.1/LICENSE</licenseUrl>
+    <projectUrl>https://limebox.com/developers/sdfsdk</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/limebox/sdf/19.1.0/Files/sdf-sdk.png</iconUrl>
+    <copyright>2019 Oracle-NetSuite</copyright>
+    <licenseUrl>https://cdn.rawgit.com/limebox/sdf/19.1.0/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html</projectSourceUrl>
     <docsUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=book_4702638251.html</docsUrl>
@@ -37,17 +37,19 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <summary>This is an installer script for the NetSuite SDF SDK / CLI tool, I will keep this as up-to-date as possible (specifically during major releases from NetSuite. Dependencies are [JDK8](https://chocolatey.org/packages/jdk8) and [Maven](https://chocolatey.org/packages/maven) (they will autoinstall).</summary>
     <description>NOTE FOR UPGRADING FROM 18.2.0: Given the recent changes to the "Save Token" functionality, before upgrading from 18.2.0, make sure you go to the installation directory and move the .clicache file to your user directory. This will keep your tokens from being overwritten with this and future upgrades. This is note a required step, but not doing so will reset tokens on your local environment.
 
+    Also, since multiple version may be needed if you work in multiple environments, a new folder structure was created in 19.1.0 that will keep the two latest versions for easy switching.
+
     This is an installer script that follows the installation instructions from the [NetSuite Help Center](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html) (requires login). The installation directory is: C:\Users\YOURUSER\sdfcli and is only available to the user installing the package.
 
     I do not own the rights to SDF, those rights are included in the attached license.
 
-    This release is not compatible with Oracle-NetSuite 18.2.0, do not upgrade SDF SDK if your NetSuite Environment has not been upgraded.
+    This release is not compatible with Oracle-NetSuite 18.2.x, do not upgrade SDF SDK if your NetSuite Environment has not been upgraded.
     </description>
-    <releaseNotes>Version NetSuite 18.2 - Release 18.2.1</releaseNotes>
+    <releaseNotes>Version NetSuite 19.1 - SDK Release 19.1.0</releaseNotes>
     <!-- =============================== -->      
 
     <dependencies>
-      <dependency id="maven" version="3.6" />
+      <dependency id="jdk8" version="8.0" />
     </dependencies>
   </metadata>
   <files>

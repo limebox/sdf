@@ -1,44 +1,19 @@
-(right now these are scribbles. They will be updated shortly.)
-
 # Notes
 
 Before finalizing the branch of a new version, make sure both Brew and Chocolatey have been updated, working, and approved.
 
 Any pull requests from this repo will be evaluated, so please provide verbose commit comments and history or the PR will be rejected.
 
-## Unpack Jar file
-
-In order to deploy this system, you must download the latest Eclipse SDF Jar file and unpack it. To do this, navigate to the Eclipse SDK file that you downloaded from the NetSuite help docs, and use this command (Mac or PC). To make it easier, make sure you run this command inside a subfolder as several files will be extracted that you will not use.
-
-```cmd
-jar xf com.netsuite.ide.eclipse.ws_XXXX.X.X.jar
-```
-
-The axis.jar and NetSuiteWebService.jar files are the ones needed for the SDK. They must always be replaced during an update.
+Since 19.1.0, installation instructions have been significantly simplified.
 
 ## Chocolatey
 
-### Checklist
-* Did you download the latest Windows suplemental files from the NetSuite help center?
-* Did you update the .jar file reference names in the VERIFICATION.txt file?
-* Did you update the MD5 value for the downloaded files?
-* Did you update the .jar file reference names in the sdfcli.nuspec file?
-* Did you update the .jar file reference name in the pom.xml file?
-* Did you delete the old .jar files?
+Update the installation path in chocolateyinstall.ps1
 
-### Getting the MD5 hash
-
-### PC
-```cmd
-CertUtil -hashfile sdfsdk-XX.X.X.tar.gz MD5
-```
-
-To pack the choco file once the checklist is complete:
+Pack the file from the command line
 ```cmd
 choco pack
 ```
-
-Move the sdfcli.XX.X.X.nupkg to /Files/chocolatey/ in this repository and remove the old file.
 
 Before submitting to the Chocolatey store, you will need to test locally.
 
@@ -63,30 +38,6 @@ You will need an API key to the Limebox Chocolatey account. This will not be pub
 
 ## Brew
 
-### Checklist
-* Did you download the latest Mac suplemental files from the NetSuite help center?
-* Did you replace the default SDFSDK reference location in the sdfcli file (SDFSDK_PATH=/usr/local/Cellar/sdfcli/XX.X.X/libexec/)
-* Did you confirm the .jar file reference name in the pom.xml file?
-* Did you update the .jar file reference name in the sdfsdk.rb file?
-* Did you package the project inside a .tar.gz file?
-* Did you update the SHA256 value for the .tar.gz file created for the project?
-* Did you delete the old .jar files?
-* Did you update the /share/man/sdfsdk to the latest version of the manual from the CLI tool?
+Update the download path in the brew/sdfsdk.rb file.
 
-Since brew won't allow me to officially post this on the brew list, so the ruby recipe needs to be updated on the [Limebox NetSuite Homebrew repo](https://github.com/limebox/homebrew-netsuite). It must point to the file hosted on this repository, /Files/brew/sdfcdk-XX.X.X.tar.gz. Don't forget to update the SHA256 of the .tar.gz file by running:
-
-To tar the folder on a Mac, cd into the /brew folder
-
-```cmd
-tar -zcvf ../Files/brew/sdfsdk-XX.X.X.tar.gz ./*
-```
-
-### Mac
-```cmd
-openssl sha256 -sha256 sdfsdk-XX.X.X.tar.gz
-```
-
-### PC
-```cmd
-CertUtil -hashfile sdfsdk-XX.X.X.tar.gz SHA256
-```
+Since brew won't allow me to officially post this on the brew list, so the ruby recipe needs to be updated on the [Limebox NetSuite Homebrew repo](https://github.com/limebox/homebrew-netsuite).
