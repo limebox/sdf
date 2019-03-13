@@ -19,7 +19,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sdfcli</id>
-    <version>19.1.0</version>
+    <version>19.1.01</version>
     <packageSourceUrl>https://cdn.rawgit.com/limebox/sdf/19.1.0/Files/chocolatey/sdfcli.19.1.0.nupkg</packageSourceUrl>
 	<owners>TJ Tyrrell</owners>
 

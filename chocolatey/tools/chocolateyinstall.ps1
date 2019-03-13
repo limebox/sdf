@@ -38,5 +38,5 @@ $newpath = "$oldpath;$appParent"
 Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value $newPath
 
 # Add a shortcut to the .clicache file
-$mklinkclicache = 'cmd /c mklink "$appDir\.clicache" "..\.clicache"'
+$mklinkclicache = 'cmd /c mklink "' + $app_dir + '\.clicache" "..\.clicache"'
 invoke-expression "$mklinkclicache"
