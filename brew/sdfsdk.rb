@@ -2,16 +2,29 @@ class Sdfsdk < Formula
   desc "NetSuite SDF SDK Tool"
   homepage "https://limebox.com/developers/sdfsdk"
   url "https://system.netsuite.com/download/suitecloud-sdk/cli/java/19.1/sdf-cli.tar.gz"
-  sha256 "7cc40481acb67147728b76e2c3330b27517cce90d8e03285d1aa76206d22893b"
+  sha256 "ce0fff21661e4fe238d815b28557418e523e93e5687975281a504351b59989e2"
+  version "19.1.1"
 
-  depends_on "maven" => :build
+  # Resolve cask dependencies
+  depends_on :java => "1.8"
 
   def install
-    bin.install "sdfcli"
-    libexec.install "pom.xml", "com.netsuite.ide.core_2018.2.1.jar", "axis.jar", "NetSuiteWebService.jar", ".clicache"
+
+  	system "curl", "https://raw.githubusercontent.com/limebox/homebrew-netsuite/19.1.1/sdfsdk", "-o", "#{buildpath}/sdfsdk"
+    bin.install "sdfcli", "cli-2019.1.1.jar","sdfsdk"
+
+  end
+
+  def post_install
+
+    # Install .clicache shortcut
+    system "ln", "-s", "~/.clicache", "#{bin}/.clicache"
+
   end
 
   test do
-    system "#{bin}/sdfsdk"
+
+    system "#{bin}/sdfcli"
+
   end
 end

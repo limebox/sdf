@@ -23,9 +23,9 @@ $installation_args = @{
     url            = $install_url
     url64bit       = $install_url
     unzipLocation  = $app_dir
-    checksum       = 'f51d4647bb863241583df23ffbcc434af08bffe3e6c7b280a16d2aa43194611a'
+    checksum       = '4cd6bfff53a847d61f12c6f46ea4586a15b69360c43b22f94e4ee38b2f73131c'
     checksumType   = 'sha256'
-    checksum64     = 'f51d4647bb863241583df23ffbcc434af08bffe3e6c7b280a16d2aa43194611a'
+    checksum64     = '4cd6bfff53a847d61f12c6f46ea4586a15b69360c43b22f94e4ee38b2f73131c'
     checksumType64 = 'sha256'
 }
  
