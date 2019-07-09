@@ -41,3 +41,20 @@ You will need an API key to the Limebox Chocolatey account. This will not be pub
 Update the download path in the brew/sdfsdk.rb file.
 
 Since brew won't allow me to officially post this on the brew list, so the ruby recipe needs to be updated on the [Limebox NetSuite Homebrew repo](https://github.com/limebox/homebrew-netsuite).
+
+## SHA Checks
+
+### Windows
+
+Download: https://system.netsuite.com/download/suitecloud-sdk/cli/java/19.1/sdf-cli.zip
+```cmd
+CertUtil -hashfile sdf-cli.zip SHA256
+```
+
+### Mac
+
+Download: https://system.netsuite.com/download/suitecloud-sdk/cli/java/19.1/sdf-cli.tar.gz
+
+```cmd
+openssl sha -sha256 sdf-cli.tar.gz
+```

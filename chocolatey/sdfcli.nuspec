@@ -19,17 +19,17 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sdfcli</id>
-    <version>19.1.1</version>
-    <packageSourceUrl>https://cdn.rawgit.com/limebox/sdf/19.1.1/Files/chocolatey/sdfcli.19.1.1.nupkg</packageSourceUrl>
+    <version>19.1.2</version>
+    <packageSourceUrl>https://cdn.rawgit.com/limebox/sdf/19.1.2/Files/chocolatey/sdfcli.19.1.2.nupkg</packageSourceUrl>
 	<owners>TJ Tyrrell</owners>
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <title>NetSuite SDF SDK Tool</title>
     <authors>Oracle NetSuite</authors>
     <projectUrl>https://limebox.com/developers/sdfsdk</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/limebox/sdf/19.1.1/Files/sdf-sdk.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/limebox/sdf/19.1.2/Files/sdf-sdk.png</iconUrl>
     <copyright>2019 Oracle-NetSuite</copyright>
-    <licenseUrl>https://cdn.rawgit.com/limebox/sdf/19.1.1/LICENSE</licenseUrl>
+    <licenseUrl>https://cdn.rawgit.com/limebox/sdf/19.1.2/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1489072409.html</projectSourceUrl>
     <docsUrl>https://system.netsuite.com/app/help/helpcenter.nl?fid=book_4702638251.html</docsUrl>
@@ -45,7 +45,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
     This release is not compatible with Oracle-NetSuite 18.2.x, do not upgrade SDF SDK if your NetSuite Environment has not been upgraded.
     </description>
-    <releaseNotes>Version NetSuite 19.1 - SDK Release 19.1.1</releaseNotes>
+    <releaseNotes>Version NetSuite 19.1 - SDK Release 19.1.2</releaseNotes>
     <!-- =============================== -->      
 
     <dependencies>
